@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Porto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navbar-container">
+            <div class="container">
+                <a href="#" class="logo">Falah</a>
+                <nav class="main-nav">
+                    <ul style="list-style: none;">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#projek">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="sosial-ikon">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/FalahFaj"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div>
+                    <button id="btn-ganti-tema" aria-label="Ganti tema" style="position: relative;"><div class="ikon-bentuk"></div></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section id="about" class="bagian-about">
+            <div class="container">
+                <div class="about-konten">
+                    <!-- <span class="subtitle">About</span> -->
+                    <h1">About Me</h1>
+                    <h2>Hi, Saya <span id="ketik-teks"></span><span class="cursor">&nbsp;</span></h2>
+                    <p>
+                        Mahasiswa semester 3 prodi Informatika Fakultas Ilmu Komputer Universitas Jember, memiliki minat dibidang pengembangan software serta kemanan cyber
+                    </p>
+                    <div class="buttons">
+                        <a href="#tools" class="btn btn_utama">Tools</a>
+                        <a href="#contact" class="btn btn_kedua">Let's talk now</a>
+                    </div>
+                </div>
+                <div class="foto-about">
+                    <img src="asset/falah.png" alt="Falah foto" class="card-img">
+                    <div class="card-overlay">
+                        <div class="glass"></div>
+                    </div>
+                </div>
+                <div class="statistik">
+                    <div class="stat">
+                        <h3>+1.5</h3>
+                        <p>Years of experience</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1</h3>
+                        <p>Sertifikat</p>
+                    </div>
+                    <div class="stat">
+                        <h3>+5</h3>
+                        <p>Completed Projects</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projek" class="projek-section">
+            <div class="container">
+                <!-- <span class="subtitle">Services</span> -->
+                <h2>Projek saya</h2>
+                <div class="projek-grid">
+                    <div class="service-card">
+                        <img src="asset/algo1.png" alt="Logo Design Icon" class="service-icon">
+                        <h3>Projek akhir algo 1</h3>
+                        <p>Sewa Alat Pertanian Murah (SEPETAMU) merupakn aplikasi console yang dibaut menggunakan bahasa python yang digunakan untuk memudahkan transaksi bagi penyedia jasa penyewaan peralatan pertanian</p>
+                        <a href="https://github.com/FalahFaj/Projek-Algo-1">Kunjugi github →</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="asset/algo2.png" alt="Identity Design Icon" class="service-icon">
+                        <h3>Projek akhir algo 2</h3>
+                        <p>Optimasi pengantaran paket bagi kurir menggunakan algoritma minimus spaning tree, projek ini dibuat untuk menentukan rute yang optimal bagi kurir dalam mengantarkan paket, projek ini dibuat menggunakan bahasa python</p>
+                        <a href="https://github.com/FalahFaj/Algo2_Gacor">Kunjungi github →</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="asset/pbo.png" alt="Packaging Design Icon" class="service-icon">
+                        <h3>E-Comerce Cantiknya Mahar</h3>
+                        <p>Merupakan aplikasi e-commerce berbasis desktop yang digunakan oleh mitra kami yaitu toko cantiknya mahar dalam memudahkan pengoperasian usahanya, projek ini dibuat menggunakan bahasa c# serta menggunakan database postgresql</p>
+                        <a href="https://github.com/FalahFaj/Project-PBO-">Kunjugi github →</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="asset/etprof.png" alt="Product Design Icon" class="service-icon">
+                        <h3>Blog Etika Profesi</h3>
+                        <p>Blog ini merupakan berisi seluruh rangkuman materi mata kuliah etika profesi semester 1, projek ini dibuat menggunakan templat dari blooger dengan tambahan style menggunakan css</p>
+                        <a href="https://tugasetipro.blogspot.com/">kunjungi situs →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="clients-section">
+            <div class="container">
+                <!-- <span class="subtitle">TOOLS</span> -->
+                <h2>Tools yang setengah dikuasai</h2>
+                <div class="tools-logos">
+                    <img src="asset/burpsuite.png" alt="Imoge logo" class="sembunyi">
+                    <img src="asset/kali.png" alt="Polar logo" class="sembunyi">
+                    <img src="asset/metasploit.png" alt="Eembreque logo" class="sembunyi">
+                    <img src="asset/Logo_nmap.png" alt="Ocean logo" class="sembunyi">
+                    <img src="asset/postgresql.svg" alt="Datox.Ai logo" class="sembunyi">
+                    <img src="asset/python.svg" alt="Foreva logo" class="sembunyi">
+                    <img src="asset/c-sharp.svg" alt="Rodond logo" class="sembunyi">
+                    <img src="asset/github.svg" alt="Airy Veil logo" class="sembunyi">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p class="contact-description">
+                    Jangan ragu untuk menghubungi saya untuk kolaborasi, pertanyaan, atau sekadar menyambung tali silaturahmi!
+                </p>
+                <div class="sembunyi">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn_utama">Kirim Pesan</button>
+                        <p id="status-pesan" style="margin-top: 15px; font-weight: bold;"></p>
+                    </form>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="kolom-footer">
+                <h4>Falah</h4>
+                <p>Mahasiswa Informatika UNEJ</p>
+            </div>
+            <div class="kolom-footer">
+                <h4>My Address</h4>
+                <p>Rt 03, Rw 01, Botoputih, Tembarak Temanggung</p>
+            </div>
+            <div class="kolom-footer">  
+                <h4>Butuh bantuan</h4>
+                <p>
+                    Phone : <a href="wa.me/+6287863306466">+6287863306466</a>
+                    Email : <a href="@muhammadfalahfajrul0@gmail.com">@muhammadfalahfajrul0@gmail.com</a>
+                </p>
+            </div>
+            <div class="kolom-footer">
+                <h4>Follow me</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="kopiright">
+            <p>© 2025 Muhammad Falah. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

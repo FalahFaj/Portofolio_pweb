@@ -1,0 +1,701 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+:root{
+    --bg-color: #f8f5f2;
+    --text-color: #333333;
+    --primary-color: #cfbfec;
+    --primary-color-rgb: 207, 191, 236;
+    --secondary-color: #555555;
+    --warna-timbul: #f2eded;
+    --border-color: #e9dede;
+    --shadow-box: rgba(44, 16, 101, 0.10);
+}
+
+body.tema_gelap {
+    --bg-color: #1d0323;
+    --text-color: #edeaee;
+    --primary-color: #2e1d4d;
+    --primary-color-rgb: 46, 29, 77;
+    --secondary-color: #c5b0ca;
+    --warna-timbul: #4201498c;
+    --border-color: #232123;
+    --shadow-box: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    /* display: flex;
+    justify-content: space-between; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    /* border-bottom: 1px solid #e0e0e0; */
+    box-sizing: border-box;
+}
+
+.header {
+    /* position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%; */
+    background-color: rgba(248, 245, 242, 0.85); /* var(--bg-color) with opacity */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--primary-color); /* warna ungu muda, bisa disesuaikan */
+    border-radius: 32px;
+    margin: 24px auto 0 auto;
+    max-width: 90vw;
+    box-shadow: 0 4px 32px 0 rgba(44, 16, 101, 0.10);
+    border: none;
+    padding: 20;
+    backdrop-filter: none;
+    transition: background 0.3s;
+}
+
+.ikon-bentuk {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 7.5px;
+    left: 7.5px;
+}
+
+#btn-ganti-tema {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    background-color: #4396e3;
+}
+
+.ikon-bentuk {
+    background: #ffd700;
+    transform: scale(1);
+    box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+}
+
+body.tema_gelap #btn-ganti-tema {
+    background-color: #2c3e50;
+}
+
+body.tema_gelap .ikon-bentuk {
+    background: transparent;
+    transform: scale(0.8);
+    box-shadow: inset -7px 3px 0 0px #f1c40f;
+}
+
+.cursor {
+    border-left: 2px solid black;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0 32px;
+    min-height: 64px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    /* position-anchor: left; */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--warna-timbul);
+}
+
+.sosial-ikon {
+    display: flex;
+    gap: 20px;
+}
+
+.sosial-ikon a {
+    color: var(--text-color);
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sosial-ikon a:hover {
+    color: var(--primary-color);
+}
+
+.bagian-about {
+    padding: 80px 0;
+}
+
+#about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+
+.subtitle {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-konten h1 {
+    font-size: 48px;
+    margin: 0 0 16px 0;
+    color: var(--text-color);
+}
+
+.about-konten h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+}
+
+.about-konten p {
+    font-size: 16px;
+    color: var(--secondary-color);
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.foto-about {
+    justify-self: end;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(186, 60, 218, 0.7);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(.2,.8,.2,1), filter 0.6s ease;
+    will-change: transform, filter;
+    z-index: 1;
+}
+
+/* .foto-about::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+    z-index: 1;
+    transform: rotate(-15deg);
+} */
+
+.foto-about:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(229, 156, 233, 0.9), 0 0 20px rgba(255, 255, 255, 0.2); 
+}
+
+.foto-about img:hover {
+    transform: scale(1.02);
+}
+
+.card-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  /* gunakan mask agar efek hanya di dalam bingkai */
+  -webkit-mask-image: linear-gradient(#000, #000);
+  mask-image: linear-gradient(#000, #000);
+}
+
+.gloss {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(120px 180px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.25), rgba(255,255,255,0) 60%) no-repeat,
+    radial-gradient(200px 260px at calc(var(--mx,50%) + 10%) calc(var(--my,50%) + 10%), rgba(255,200,150,.18), rgba(255,200,150,0) 60%) no-repeat;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity .35s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+  will-change: transform, opacity;
+  transform: translate3d(
+    calc((var(--mx,50%) - 50%) * .15),
+    calc((var(--my,50%) - 50%) * .15),
+    0
+  ) scale(1.02);
+}
+
+
+.foto-about:hover .card-img {
+  transform: scale(1.02);
+  filter: contrast(1.05) saturate(1.08);
+}
+
+.foto-about:hover .gloss {
+  opacity: 1;
+}
+
+.foto-about img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    /* max-width: 80%;
+    height: auto;
+    border-radius: 50%; */
+    position: relative;
+    z-index: 2;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn_utama {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn_utama:hover {
+    background-color: #764fbb; 
+}
+
+.btn_kedua {
+    background-color: transparent;
+    color: var(--text-color);
+    /* border: 2px solid var(--text-color); */
+}
+
+.btn_kedua:hover {
+    color: var(--primary-color);
+}
+
+.statistik {
+    grid-column: 1/-1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    flex: 1 1 250px; 
+    padding:22px 22px 30px;
+    border-radius:18px;
+    background: var(--bg-color);
+    /* background: color-mix(in oklab, #0b0f1c 85%, var(--bg-color) 15%); */
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter: saturate(1.2) blur(6px);
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    overflow:hidden;
+    isolation:isolate;
+    transition: transform .35s ease, border-color .35s ease, background .35s ease;
+}
+
+.stat::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(600px 220px at -10% 0%, rgba(96,165,250,.14), transparent 60%),
+    radial-gradient(600px 220px at 110% 100%, rgba(167,139,250,.12), transparent 60%);
+  pointer-events:none;
+  z-index:-1;
+  opacity:.9;
+}
+
+.stat::after{
+  content:"";
+  position:absolute; inset:-20%;
+  background:
+    radial-gradient(180px 140px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.12), transparent 60%),
+    radial-gradient(260px 200px at calc(var(--mx,50%) + 8%) calc(var(--my,50%) + 6%), rgba(96,165,250,.12), transparent 65%),
+    radial-gradient(320px 240px at calc(var(--mx,50%) - 10%) calc(var(--my,50%) - 12%), rgba(167,139,250,.10), transparent 70%);
+  mix-blend-mode: overlay;
+  opacity:0;
+  transition: opacity .3s ease;
+  pointer-events:none;
+}
+.stat:hover::after{ opacity:1; }
+
+.stat:hover{
+  transform:translateY(-4px);
+  border-color: color-mix(in oklab, rgba(255,255,255,0.08) 70%, #ffffff 30%);
+}
+
+.stat h3 {
+    margin:0;
+    font-size:40px;
+    font-weight:800;
+    color:var(--text-color);
+    line-height:1;
+    order:2; 
+}
+
+.stat p{
+    margin:0;
+    color: var(--secondary-color);
+    font-size:15px;
+    order:3;
+}
+
+.projek-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.projek-section h2 {
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.projek-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    text-align: left;
+}
+
+.service-card {
+    background-color: var(--warna-timbul);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(213, 108, 234, 0.3);
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+}
+
+.service-icon {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+    line-height: 1.7;
+}
+
+.service-card a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.service-card a:hover {
+    text-decoration: underline;
+    box-shadow: var(--primary-color);
+}
+
+.clients-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.clients-section h2 {
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.tools-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+    align-items: center;
+}
+
+.tools-logos img {
+    max-width: 50px;
+    width: 100%;
+    justify-self: center;
+
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.tools-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #1c1c1c;
+    color: #a0a0a0;
+    padding: 70px 10% 0 10%;
+    font-size: 15px;
+}
+
+.footer-grid {
+    display: grid;
+    justify-self: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.kolom-footer h3,
+.kolom-footer h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.kolom-footer h3 {
+    font-size: 22px;
+}
+.kolom-footer p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.kolom-footer a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.kolom-footer a:hover {
+    color: var(--primary-color);
+}
+
+.footer .sosial-ikon {
+    gap: 15px;
+}
+
+.footer .sosial-ikon a {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer .sosial-ikon a:hover {
+    color: var(--primary-color);
+}
+
+.kopiright {
+    padding: 20px 0;
+    border-top: 1px solid #333333;
+    text-align: center;
+}
+
+.kopiright p {
+    margin: 0;
+    font-size: 14px;
+    color: #777777;
+}
+
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.contact-description {
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-box);
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.contact-form button[type="submit"] {
+    width: auto;
+    padding: 14px 30px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* Ini buat coba-coba aja */
+
+.coba-coba {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--border-color);
+}
+
+.konten {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    font-size: 1.5rem;
+}
+
+.konten h4 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+.konten ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.konten li {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+.sembunyi {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 2s ease-out;
+}
+
+.tampil {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#status-pesan.sukses {
+    color: #28a745; /* Hijau */
+}
+
+#status-pesan.gagal {
+    color: #dc3545; /* Merah */
+}
